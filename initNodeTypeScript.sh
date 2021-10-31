@@ -1,3 +1,4 @@
+#! /usr/bin/env bash
 cecho(){
     RED="\033[0;31m"
     GREEN="\033[0;32m"
@@ -22,7 +23,7 @@ else
     then
         echo -e "\e[31m Directory alrady exists!"
         
-        read -p "do you want to rewrite it (the original will be deleted!)? [y/N]" rewriteIt
+        read -p "do you want to rewrite it (the original will be deleted!)? [y/N] " rewriteIt
         if [[ "$rewriteIt" == "y" ]] || [[ "$rewriteIt" == "Y" ]]
         then
             rm -rf $directoryinit
@@ -44,8 +45,8 @@ cd $directoryinit
 
 echo -e "\e[33m ===========================STEP 2================================"
 
-read -p "project name(without spaces and upper cases)" projectname
-read -p "Auther" authername
+read -p "project name(without spaces and upper cases) : " projectname
+read -p "Auther : " authername
 
 cat << EOF > package.json
 {
